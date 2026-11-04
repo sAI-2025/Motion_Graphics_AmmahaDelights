@@ -37,5 +37,20 @@ grid. SFX chosen for motion-matched moments.
 
 Reproduce: `cd brag-output/composition && npx hyperframes check && npx hyperframes render --quality looks --output ../brag.mp4`
 
+## Skills vendored in repo
+
+The agent skills used to build this video are vendored under `.agents/skills/` so the
+project is self-contained: `brag` (the launch-video workflow, from `latent-spaces/brag`),
+`hyperframes`, `hyperframes-core`, `hyperframes-animation`, `hyperframes-creative`,
+`hyperframes-cli`, `hyperframes-keyframes`, `hyperframes-audio`, `hyperframes-studio`,
+and `media-use` (HyperFrames domain skills, installed from the HyperFrames registry).
+
+Note: `.agents/skills/brag/assets/music/*.mp3` (the ENDE dot APP "Happy Beats / Business
+Moves" packs bundled with the skill) are deliberately excluded — their license terms are
+not documented for redistribution. The single track used (`happy-beats-business-moves-vol-12`)
+is included in `brag-output/composition/assets/music/`.
+
+To refresh the domain skills to latest: `npx hyperframes@latest skills update`
+
 Tooling excluded on purpose (not part of the product): `.agents/` (installed brag skill),
 `brag-output/composition/.hyperframes/` (build artifacts), `brag-output/verify/` (check evidence).

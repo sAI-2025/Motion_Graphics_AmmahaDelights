@@ -1,5 +1,9 @@
-# Installed third-party skill tooling (brag + hyperframes) — not product source
-.agents/
+# Skills-lock note: the HyperFrames domain skills + the /brag workflow skill are
+# vendored under .agents/skills/ for reproducibility. The bundled ENDE dot APP music
+# packs are excluded: the brag skill README requires verifying their license before
+# redistribution, and it is not documented here. The single track used in the video
+# travels with the deliverable (brag-output/composition/assets/music/).
+.agents/skills/brag/assets/music/*.mp3
 
 # Hyperframes build artifacts, check reports and snapshots
 .hyperframes/
