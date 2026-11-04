@@ -1,0 +1,22 @@
+# Installed third-party skill tooling (brag + hyperframes) — not product source
+.agents/
+
+# Hyperframes build artifacts, check reports and snapshots
+.hyperframes/
+**/.hyperframes/
+
+# Studio-generated thumbnails and audio caches
+.thumbnails/
+.waveform-cache/
+**/.thumbnails/
+**/.waveform-cache/
+
+# Check verification frames (large PNG evidence)
+brag-output/verify/
+
+# Draft encode
+brag-output/brag-draft.mp4
+
+# OS / editor
+.DS_Store
+Thumbs.db

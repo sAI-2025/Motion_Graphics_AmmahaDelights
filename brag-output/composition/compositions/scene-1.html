@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scene 1 — Hook</title>
+</head>
+<body>
+  <template>
+    <style>
+      #root {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background: #fcfbf7;
+        color: #533c2d;
+        font-family: Poppins, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .h1 {
+        margin: 0;
+        font-family: "Playfair Display", serif;
+        font-weight: 900;
+        font-size: 118px;
+        line-height: 1.02;
+        letter-spacing: -0.012em;
+        color: #533c2d;
+      }
+
+      .h1 span {
+        display: block;
+      }
+
+      .h1 .accent {
+        color: #a85c1b;
+      }
+
+      .sub {
+        margin: 0;
+        font-family: Poppins, sans-serif;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 1.5;
+        color: #6e5a4b;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 15px 32px;
+        border-radius: 999px;
+        background: rgba(83, 60, 45, 0.07);
+        border: 2px solid rgba(193, 126, 92, 0.35);
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #533c2d;
+      }
+
+      .s1-photo {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform-origin: center center;
+      }
+
+      .s1-scrim {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(46, 30, 20, 0.62) 0%,
+          rgba(46, 30, 20, 0.4) 45%,
+          rgba(46, 30, 20, 0.58) 100%
+        );
+      }
+
+      .glow {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        will-change: opacity, transform;
+      }
+
+      #hero-glow {
+        left: 50%;
+        top: 50%;
+        width: 1020px;
+        height: 1020px;
+        margin-left: -510px;
+        margin-top: -510px;
+        background: radial-gradient(
+          circle,
+          rgba(245, 203, 76, 0.6) 0%,
+          rgba(241, 160, 90, 0.25) 42%,
+          rgba(245, 203, 76, 0) 68%
+        );
+        mix-blend-mode: screen;
+      }
+
+      .s1-inner {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .s1-panel {
+        position: relative;
+        width: 1280px;
+        padding: 62px 76px 68px;
+        border-radius: 46px;
+        background: rgba(252, 251, 247, 0.92);
+        border: 2px solid rgba(255, 255, 255, 0.65);
+        box-shadow: 0 44px 130px rgba(40, 22, 12, 0.42);
+        text-align: center;
+      }
+
+      #s1-eyebrow {
+        margin-bottom: 30px;
+      }
+
+      #s1-sub {
+        margin-top: 30px;
+      }
+    </style>
+
+    <div data-hf-id="hf-avir" id="root" data-composition-id="scene-1" data-width="1920" data-height="1080">
+      <img style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.04) 100%)" data-hf-id="hf-k9zl" id="s1-photo" class="s1-photo" src="assets/images/hero-desserts.jpg" alt="An assortment of AmAha Delights desserts" data-layout-allow-overflow="">
+      <div data-hf-id="hf-x59t" class="s1-scrim"></div>
+      <div data-hf-id="hf-7p91" id="hero-glow" class="glow"></div>
+      <div data-hf-id="hf-g7uj" class="s1-inner">
+        <div data-hf-id="hf-35la" class="s1-panel" id="s1-panel">
+          <div data-hf-id="hf-2hol" class="pill" id="s1-eyebrow">✦ Premium Sweet Treats</div>
+          <h1 data-hf-id="hf-d8in" class="h1">
+            <span data-hf-id="hf-hihj" class="accent">Delight in</span>
+            <span data-hf-id="hf-l6ui">Every Bite</span>
+          </h1>
+          <p data-hf-id="hf-btm1" class="sub" id="s1-sub">
+            Experience the perfect blend of traditional flavors and modern innovation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var tl = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
+
+        tl.fromTo("#s1-photo", { scale: 1.14 }, { scale: 1, duration: 4, ease: "none" }, 0);
+        tl.fromTo("#s1-panel", { y: 64, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, 0.1);
+        tl.fromTo("#s1-eyebrow", { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, 0.54);
+        tl.fromTo(".h1 .accent", { y: 72, opacity: 0 }, { y: 0, opacity: 1, duration: 0.85 }, 0.7);
+        tl.fromTo(".h1 span:nth-child(2)", { y: 72, opacity: 0 }, { y: 0, opacity: 1, duration: 0.85 }, 0.84);
+        tl.fromTo("#s1-sub", { y: 34, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 1.04);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["scene-1"] = tl;
+      })();
+    </script>
+  </template>
+</body>
+</html>

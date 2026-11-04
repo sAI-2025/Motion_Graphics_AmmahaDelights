@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scene 3 — Smart Vending</title>
+</head>
+<body>
+  <template>
+    <style>
+      #root {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background: #fcfbf7;
+        color: #533c2d;
+        font-family: Poppins, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .h2 {
+        margin: 0;
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        font-size: 66px;
+        line-height: 1.08;
+        letter-spacing: -0.01em;
+        color: #533c2d;
+      }
+
+      .h2 .accent {
+        color: #a85c1b;
+      }
+
+      .sub {
+        margin: 0;
+        font-family: Poppins, sans-serif;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 1.5;
+        color: #6e5a4b;
+        max-width: 760px;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 15px 32px;
+        border-radius: 999px;
+        background: rgba(83, 60, 45, 0.07);
+        border: 2px solid rgba(193, 126, 92, 0.35);
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #533c2d;
+      }
+
+      .bg-cool {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        filter: blur(10px);
+      }
+
+      .blob-blue {
+        right: -160px;
+        bottom: -200px;
+        width: 880px;
+        height: 880px;
+        background: radial-gradient(
+          circle,
+          rgba(152, 210, 226, 0.45) 0%,
+          rgba(152, 210, 226, 0) 64%
+        );
+      }
+
+      .glow {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        will-change: opacity, transform;
+      }
+
+      #vend-glow {
+        left: 32%;
+        top: 50%;
+        width: 1000px;
+        height: 1000px;
+        margin-left: -500px;
+        margin-top: -500px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 209, 217, 0.55) 0%,
+          rgba(255, 209, 217, 0) 66%
+        );
+        mix-blend-mode: multiply;
+      }
+
+      .s3-inner {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 72px;
+        padding: 110px 130px;
+      }
+
+      .s3-left {
+        position: relative;
+        width: 720px;
+        height: 660px;
+        border-radius: 34px;
+        overflow: hidden;
+        box-shadow: 0 40px 110px rgba(83, 60, 45, 0.3);
+        border: 3px solid rgba(255, 255, 255, 0.7);
+      }
+
+      .s3-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .s3-panel-badge {
+        position: absolute;
+        left: 24px;
+        bottom: 24px;
+        padding: 13px 28px;
+        border-radius: 999px;
+        background: #f5cb4c;
+        color: #533c2d;
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+      }
+
+      .s3-right {
+        width: 860px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #s3-eyebrow {
+        margin-bottom: 24px;
+      }
+
+      #s3-sub {
+        margin-top: 22px;
+      }
+
+      .rows {
+        list-style: none;
+        margin: 44px 0 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+
+      .tick {
+        flex: 0 0 auto;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background: #98d2e2;
+        color: #533c2d;
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .row h3 {
+        margin: 0;
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.25;
+        color: #533c2d;
+      }
+    </style>
+
+    <div id="root" data-composition-id="scene-3" data-width="1920" data-height="1080">
+      <div class="bg-cool blob-blue" data-layout-allow-overflow></div>
+      <div id="vend-glow" class="glow"></div>
+      <div class="s3-inner">
+        <div class="s3-left" id="s3-panel">
+          <img src="assets/images/softy-machine.jpg" alt="AmAha smart vending machine" />
+          <div class="s3-panel-badge">24/7 Operation</div>
+        </div>
+        <div class="s3-right">
+          <div class="pill" id="s3-eyebrow">Smart Solutions</div>
+          <h2 class="h2" id="s3-h">Vending <span class="accent">Machines</span></h2>
+          <p class="sub" id="s3-sub">
+            State-of-the-art vending machines &mdash; serve your customers 24/7.
+          </p>
+          <ul class="rows">
+            <li class="row" id="row1">
+              <span class="tick">&#10003;</span>
+              <div><h3>Automated soft-serve dispensing</h3></div>
+            </li>
+            <li class="row" id="row2">
+              <span class="tick">&#10003;</span>
+              <div><h3>Multiple flavor options</h3></div>
+            </li>
+            <li class="row" id="row3">
+              <span class="tick">&#10003;</span>
+              <div><h3>Touchscreen interface</h3></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var tl = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
+
+        tl.fromTo("#s3-panel", { x: -72, opacity: 0 }, { x: 0, opacity: 1, duration: 0.9 }, 0.2);
+        tl.fromTo("#s3-eyebrow", { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, 0.36);
+        tl.fromTo("#s3-h", { y: 52, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0.46);
+        tl.fromTo("#s3-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 0.66);
+        // beat-locked: 10.93s absolute / strong cue
+        tl.fromTo("#row1", { x: 64, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6 }, 0.93);
+        // beat-locked: 12.02s absolute / beat grid
+        tl.fromTo("#row2", { x: 64, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6 }, 2.02);
+        // beat-locked: 13.11s absolute / strong cue
+        tl.fromTo("#row3", { x: 64, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6 }, 3.11);
+        tl.to("#s3-eyebrow, #s3-h, #s3-sub, .rows", { opacity: 0, duration: 0.3, ease: "power2.in" }, 4.82);
+        tl.to("#s3-panel", { opacity: 0, duration: 0.3, ease: "power2.in" }, 4.82);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["scene-3"] = tl;
+      })();
+    </script>
+  </template>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "duration": 20,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#s1-eyebrow", "bySec": 1.2 },
+    { "kind": "appearsBy", "selector": "#s1-sub", "bySec": 1.7 },
+    { "kind": "appearsBy", "selector": "#card1", "bySec": 4.9 },
+    { "kind": "appearsBy", "selector": "#card2", "bySec": 5.9 },
+    { "kind": "appearsBy", "selector": "#card3", "bySec": 7.2 },
+    { "kind": "appearsBy", "selector": "#row3", "bySec": 13.6 },
+    { "kind": "appearsBy", "selector": "#s4-mark", "bySec": 16.8 },
+    { "kind": "appearsBy", "selector": "#s4-cta", "bySec": 18.0 },
+    { "kind": "before", "a": "#s1-eyebrow", "b": "#s1-sub" },
+    { "kind": "before", "a": "#s2-h", "b": "#card1" },
+    { "kind": "before", "a": "#card1", "b": "#card3" },
+    { "kind": "staysInFrame", "selector": ".s1-panel" },
+    { "kind": "staysInFrame", "selector": ".cards" }
+  ]
+}

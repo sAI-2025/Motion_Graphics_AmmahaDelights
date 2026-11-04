@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scene 2 — Signature Treats</title>
+</head>
+<body>
+  <template>
+    <style>
+      #root {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background: #fcfbf7;
+        color: #533c2d;
+        font-family: Poppins, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .h2 {
+        margin: 0;
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        font-size: 66px;
+        line-height: 1.08;
+        letter-spacing: -0.01em;
+        color: #533c2d;
+      }
+
+      .h2 .accent {
+        color: #a85c1b;
+      }
+
+      .sub {
+        margin: 0;
+        font-family: Poppins, sans-serif;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 1.5;
+        color: #6e5a4b;
+      }
+
+      .rule {
+        width: 140px;
+        height: 6px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #f5cb4c 0%, #c17e5c 100%);
+      }
+
+      .bg-warm,
+      .bg-cool {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        filter: blur(10px);
+      }
+
+      .blob-warm {
+        right: -60px;
+        top: -120px;
+        width: 900px;
+        height: 900px;
+        background: radial-gradient(
+          circle,
+          rgba(245, 203, 76, 0.3) 0%,
+          rgba(245, 203, 76, 0) 62%
+        );
+      }
+
+      .blob-pink {
+        left: -140px;
+        bottom: -220px;
+        width: 820px;
+        height: 820px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 209, 217, 0.5) 0%,
+          rgba(255, 209, 217, 0) 64%
+        );
+      }
+
+      .s2-inner {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 62px;
+        padding: 90px 120px;
+      }
+
+      .s2-head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        text-align: center;
+      }
+
+      .cards {
+        display: flex;
+        gap: 48px;
+        align-items: stretch;
+      }
+
+      .card {
+        position: relative;
+        width: 460px;
+        border-radius: 30px;
+        background: #ffffff;
+        border: 2px solid rgba(193, 126, 92, 0.18);
+        box-shadow: 0 30px 80px rgba(83, 60, 45, 0.18);
+        overflow: hidden;
+      }
+
+      .card-media {
+        position: relative;
+        z-index: 1;
+        height: 300px;
+        background: linear-gradient(135deg, #fff6e6 0%, #ffe9e3 100%);
+      }
+
+      .card-media img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 22px;
+      }
+
+      .card-badge {
+        position: absolute;
+        z-index: 3;
+        top: 20px;
+        right: 20px;
+        padding: 12px 26px;
+        border-radius: 999px;
+        background: #f5cb4c;
+        color: #533c2d;
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        letter-spacing: 0.04em;
+      }
+
+      .card-body {
+        position: relative;
+        z-index: 2;
+        padding: 30px 32px 36px;
+      }
+
+      .card-title {
+        margin: 0 0 12px;
+        font-family: Poppins, sans-serif;
+        font-weight: 700;
+        font-size: 34px;
+        color: #533c2d;
+      }
+
+      .card-copy {
+        margin: 0;
+        font-family: Poppins, sans-serif;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 1.4;
+        color: #6e5a4b;
+      }
+    </style>
+
+    <div id="root" data-composition-id="scene-2" data-width="1920" data-height="1080">
+      <div class="bg-warm blob-warm" data-layout-allow-overflow></div>
+      <div class="bg-cool blob-pink" data-layout-allow-overflow></div>
+      <div class="s2-inner">
+        <div class="s2-head">
+          <h2 class="h2" id="s2-h">Our Signature <span class="accent">Delights</span></h2>
+          <div class="rule" id="s2-rule"></div>
+          <p class="sub" id="s2-sub">
+            Handcrafted with the finest ingredients, each treat is a celebration of taste
+          </p>
+        </div>
+        <div class="cards">
+          <div class="card" id="card1">
+            <div class="card-media">
+              <img src="assets/images/sunday.png" alt="Premium Softy" />
+            </div>
+            <div class="card-badge">Popular</div>
+            <div class="card-body">
+              <h3 class="card-title">Premium Softy</h3>
+              <p class="card-copy">
+                Smooth, creamy soft-serve ice cream in delightful flavors.
+              </p>
+            </div>
+          </div>
+          <div class="card" id="card2">
+            <div class="card-media">
+              <img src="assets/images/waffle.png" alt="Belgian Waffles" />
+            </div>
+            <div class="card-badge">New</div>
+            <div class="card-body">
+              <h3 class="card-title">Belgian Waffles</h3>
+              <p class="card-copy">
+                Crispy golden waffles topped with fresh fruits, cream, and your
+                favorite toppings.
+              </p>
+            </div>
+          </div>
+          <div class="card" id="card3">
+            <div class="card-media">
+              <img src="assets/images/coconut-product.webp" alt="Coconut Delights" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Coconut Delights</h3>
+              <p class="card-copy">
+                Traditional Kobbari Munju made with tender coconut.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var tl = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
+
+        tl.fromTo("#s2-h", { y: 52, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0.1);
+        tl.fromTo("#s2-rule", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.7 }, 0.24);
+        tl.fromTo("#s2-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 0.36);
+        // beat-grid: card 1 at 4.39s, card 2 at 5.34s, card 3 at 6.56s (absolute)
+        tl.fromTo("#card1", { y: 92, opacity: 0 }, { y: 0, opacity: 1, duration: 0.85 }, 0.39);
+        tl.fromTo("#card2", { y: 92, opacity: 0 }, { y: 0, opacity: 1, duration: 0.85 }, 1.34);
+        tl.fromTo("#card3", { y: 92, opacity: 0 }, { y: 0, opacity: 1, duration: 0.85 }, 2.56);
+        tl.to("#s2-h, #s2-rule, #s2-sub", { opacity: 0, duration: 0.3, ease: "power2.in" }, 5.35);
+        tl.to(".cards", { opacity: 0, duration: 0.3, ease: "power2.in" }, 5.32);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["scene-2"] = tl;
+      })();
+    </script>
+  </template>
+</body>
+</html>
